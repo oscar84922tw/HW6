@@ -8,14 +8,16 @@ public class WebPage {
 	public String url;
 	public KeywordCounter counter;
 	public double score;
-	public WebPage(String name,String url) {
-		this.name=name;
-		this.url=url;
+
+	public WebPage(String name, String url) {
+		this.name = name;
+		this.url = url;
 		this.counter = new KeywordCounter(url);
 	}
-	public double calcScore(ArrayList<Keyword> keywords) throws IOException{
+
+	public double calcScore(ArrayList<Keyword> keywords) throws IOException {
 		score = 0;
-		for(Keyword k:keywords){
+		for (Keyword k : keywords) {
 			score = k.weight * counter.countKeyword(k.name);
 		}
 		return score;

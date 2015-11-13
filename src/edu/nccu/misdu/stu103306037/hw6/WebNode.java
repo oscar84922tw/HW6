@@ -20,10 +20,10 @@ public class WebNode {
 		children.add(childNode);
 
 	}
-	
-	public double calcNodeScore(ArrayList<Keyword> keywords) throws IOException{
+
+	public double calcNodeScore(ArrayList<Keyword> keywords) throws IOException {
 		NodeScore = 0;
-		for(WebNode child:children){
+		for (WebNode child : children) {
 			NodeScore += calcNodeScore(keywords);
 		}
 		NodeScore += webPage.calcScore(keywords);

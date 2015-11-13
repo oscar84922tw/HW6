@@ -10,11 +10,13 @@ public class WebTree {
 		this.root = root;
 
 	}
-	public void postOrderNodeScore(ArrayList<Keyword> keywords) throws IOException{
+
+	public void postOrderNodeScore(ArrayList<Keyword> keywords)
+			throws IOException {
 		root.calcNodeScore(keywords);
 	}
-	
+
 	public void eulerTourPrint() {
-		//To be...
+		// To be...
 	}
 }
