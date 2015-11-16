@@ -18,11 +18,13 @@ public class WebTree {
 
 	public void eulerTourPrint(WebNode webNode) {
 
-		System.out.print("(" + root.webPage.name + "," + root.calcNodeScore());
+		System.out.print("(" + root.webPage.name + "," +/* 分數計算*/ root.calcNodeScore());
 		for (int i = 0; i < root.children.size(); i++) {
-			System.out.println("	" + "(" + root.children.get(i) + ","
-					+ root.calcNodeScore(root.children.get(i).name));
-			for(int j = 0;j < root.)
+			System.out.println("	" + "(" + root.children.get(i).webPage.name
+					+ "," + /* 分數計算*/ root.calcNodeScore(root.children));
+			for (int j = 0; j < root.children.get(i).children.size(); j++) {
+			System.out.println("		"+"("+root.children.get(i).children.get(j+","+ /* 分數計算*/ ));
+			}
 		}
 	}
 }
