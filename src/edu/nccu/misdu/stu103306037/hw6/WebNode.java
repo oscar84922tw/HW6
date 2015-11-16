@@ -11,7 +11,7 @@ public class WebNode {
 
 	public WebNode(WebPage webpage) {
 		this.webPage = webpage;
-		this.children = new ArrayList<>();
+		children = new ArrayList<>();
 
 	}
 
@@ -24,7 +24,7 @@ public class WebNode {
 	public double calcNodeScore(ArrayList<Keyword> keywords) throws IOException {
 		NodeScore = 0;
 		for (WebNode child : children) {
-			NodeScore += calcNodeScore(keywords);
+			NodeScore += child.calcNodeScore(keywords);
 		}
 		NodeScore += webPage.calcScore(keywords);
 		return NodeScore;

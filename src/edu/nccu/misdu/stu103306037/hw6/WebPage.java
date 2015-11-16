@@ -18,7 +18,7 @@ public class WebPage {
 	public double calcScore(ArrayList<Keyword> keywords) throws IOException {
 		score = 0;
 		for (Keyword k : keywords) {
-			score = k.weight * counter.countKeyword(k.name);
+			score += k.weight * counter.countKeyword(k.name);
 		}
 		return score;
 	}

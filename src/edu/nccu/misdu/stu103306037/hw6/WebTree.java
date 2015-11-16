@@ -16,7 +16,13 @@ public class WebTree {
 		root.calcNodeScore(keywords);
 	}
 
-	public void eulerTourPrint() {
-		// To be...
+	public void eulerTourPrint(WebNode webNode) {
+
+		System.out.print("(" + root.webPage.name + "," + root.calcNodeScore());
+		for (int i = 0; i < root.children.size(); i++) {
+			System.out.println("	" + "(" + root.children.get(i) + ","
+					+ root.calcNodeScore(root.children.get(i).name));
+			for(int j = 0;j < root.)
+		}
 	}
 }

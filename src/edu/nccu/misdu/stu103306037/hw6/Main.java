@@ -8,7 +8,6 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		WebNode rootNode = new WebNode(new WebPage("Fang Yu",
 				"http://www3.nccu.edu.tw/~yuf"));
-//		WebTree tree = new WebTree(rootNode);
 		rootNode.appendChild(new WebNode(new WebPage("Publication",
 				" http://www3.nccu.edu.tw/~yuf/publication.htm")));
 		rootNode.appendChild(new WebNode(new WebPage("Tool",
@@ -21,7 +20,11 @@ public class Main {
 						new WebPage("OpenWAVES", "http://www.openwaves.net")));
 		rootNode.appendChild(new WebNode(new WebPage("Biography",
 				"http://www3.nccu.edu.tw/~yuf/short_biography.htm")));
-		// 繼續複製....
+		rootNode.children.get(2).appendChild(
+				new WebNode(
+						new WebPage("Vlab", " http://www.cs.ucsb.edu/~vlab")));
+		rootNode.appendChild(new WebNode(new WebPage("Course",
+				"http://www3.nccu.edu.tw/~yuf/course.htm")));
 
 		WebTree tree = new WebTree(rootNode);
 
@@ -37,7 +40,7 @@ public class Main {
 
 			}
 			tree.postOrderNodeScore(keywords);
-			tree.eulerTourPrint();
+			tree.eulerTourPrint(rootNode);
 		}
 
 	}
